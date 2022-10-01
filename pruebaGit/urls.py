@@ -15,10 +15,20 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from .views import hola, hola2
+# from .views import hola, hola2, fecha_actual
+from . import views
+
+
 
 urlpatterns = [
-    path('hola/', hola),
-    path('Hola2/', hola2),
+
+    path('hola/', views.hola),
+    path('Hola2/', views.hola2),
+    path('fecha-actual/', views.fecha_actual),
+    path('fecha-nacimiento/<int:edad>', views.calcular_fecha_nacimiento),
+    path('mi-template/', views.mi_template),
+    # path('hola/', hola),
+    # path('Hola2/', hola2),
+    # path('fecha-actual/', fecha_actual),
     path('admin/', admin.site.urls),
 ]
