@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 from datetime import datetime, timedelta
-from django.template import Context, Template
+from django.template import Context, Template, loader 
 
 def hola(request):
     return HttpResponse('<h1>Esto es nuevo</h1>')
@@ -27,3 +27,18 @@ def mi_template(request):
     template_renderizado = template.render(contexto)
     
     return HttpResponse(template_renderizado)
+
+def segundo_template(request, nombre):
+    
+    # cargar_file = open(r'C:\Users\nicoo\OneDrive\Escritorio\Proyecto-python\templates\segundo_template.html', 'r')
+    # template = Template(cargar_file.read())
+    # cargar_file.close()
+    # contexto = Context({'persona':nombre})
+    # template_renderizado = template.render(contexto)
+    # return HttpResponse(template_renderizado)
+
+    template = loader.get_template('segundo_template.html')
+    template_renderizado = template.render({'persona': nombre})
+    return HttpResponse(template_renderizado)
+    
+    

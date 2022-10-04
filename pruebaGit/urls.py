@@ -27,6 +27,7 @@ urlpatterns = [
     path('fecha-actual/', views.fecha_actual),
     path('fecha-nacimiento/<int:edad>', views.calcular_fecha_nacimiento),
     path('mi-template/', views.mi_template),
+    path('mi-template/<str:nombre>', views.segundo_template),
     # path('hola/', hola),
     # path('Hola2/', hola2),
     # path('fecha-actual/', fecha_actual),
