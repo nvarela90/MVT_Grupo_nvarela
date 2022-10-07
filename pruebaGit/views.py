@@ -4,56 +4,56 @@ from django.template import Context, Template, loader
 import random
 from home.models import Persona, Familiar
 
-def hola(request):
-    return HttpResponse('<h1>Esto es nuevo</h1>')
+# def hola(request):
+#     return HttpResponse('<h1>Esto es nuevo</h1>')
 
-def hola2(request):
-    return HttpResponse('<h1>Esto es el hola 2</h1>')
+# def hola2(request):
+#     return HttpResponse('<h1>Esto es el hola 2</h1>')
 
-def fecha_actual(request):
-    fecha_ahora = datetime.now()
-    return HttpResponse(f'La fecha y hora actual es {fecha_ahora}')
+# def fecha_actual(request):
+#     fecha_ahora = datetime.now()
+#     return HttpResponse(f'La fecha y hora actual es {fecha_ahora}')
 
-def calcular_fecha_nacimiento(request, edad):
+# def calcular_fecha_nacimiento(request, edad):
     
-    fecha = datetime.now().year - edad
+#     fecha = datetime.now().year - edad
     
-    return HttpResponse(f'Tu fecha de nacimiento aproximada para tus {edad} años sería: {fecha}')
+#     return HttpResponse(f'Tu fecha de nacimiento aproximada para tus {edad} años sería: {fecha}')
 
-def mi_template(request):
+# def mi_template(request):
     
-    cargar_file = open(r'C:\Users\nicoo\OneDrive\Escritorio\Proyecto-python\templates\template.html', 'r')
-    template = Template(cargar_file.read())
-    cargar_file.close()
-    contexto = Context()
-    template_renderizado = template.render(contexto)
+#     cargar_file = open(r'C:\Users\nicoo\OneDrive\Escritorio\Proyecto-python\templates\template.html', 'r')
+#     template = Template(cargar_file.read())
+#     cargar_file.close()
+#     contexto = Context()
+#     template_renderizado = template.render(contexto)
     
-    return HttpResponse(template_renderizado)
+#     return HttpResponse(template_renderizado)
 
-def segundo_template(request, nombre):
+# def segundo_template(request, nombre):
     
-    # cargar_file = open(r'C:\Users\nicoo\OneDrive\Escritorio\Proyecto-python\templates\segundo_template.html', 'r')
-    # template = Template(cargar_file.read())
-    # cargar_file.close()
-    # contexto = Context({'persona':nombre})
-    # template_renderizado = template.render(contexto)
-    # return HttpResponse(template_renderizado)
+#     # cargar_file = open(r'C:\Users\nicoo\OneDrive\Escritorio\Proyecto-python\templates\segundo_template.html', 'r')
+#     # template = Template(cargar_file.read())
+#     # cargar_file.close()
+#     # contexto = Context({'persona':nombre})
+#     # template_renderizado = template.render(contexto)
+#     # return HttpResponse(template_renderizado)
 
-    template = loader.get_template('segundo_template.html')
-    template_renderizado = template.render({'persona': nombre})
-    return HttpResponse(template_renderizado)
+#     template = loader.get_template('segundo_template.html')
+#     template_renderizado = template.render({'persona': nombre})
+#     return HttpResponse(template_renderizado)
 
 
-def tercer_template(request):
+# def tercer_template(request):
     
-    mi_contexto = {
-        'rango': list(range(1,11)),
-        'valor_aleatorio': random.randrange(1,11)
-        }
+#     mi_contexto = {
+#         'rango': list(range(1,11)),
+#         'valor_aleatorio': random.randrange(1,11)
+#         }
 
-    template = loader.get_template('tercer_template.html')
-    template_renderizado = template.render(mi_contexto)
-    return HttpResponse(template_renderizado)
+#     template = loader.get_template('tercer_template.html')
+#     template_renderizado = template.render(mi_contexto)
+#     return HttpResponse(template_renderizado)
   
  #[[[[[PRIMERA ENTREGA]]]]]   
 # def crear_persona(request,nombre,apellido):
