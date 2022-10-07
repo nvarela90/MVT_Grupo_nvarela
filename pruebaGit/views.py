@@ -87,13 +87,21 @@ def tercer_template(request):
 #     return HttpResponse(template_renderizado)
 
 
-def crear_familiar(request,nombre,apellido):
-    
-    familiar = Familiar(nombre=nombre, apellido=apellido, edad=random.randrange(1,99), fecha_nacimiento=datetime.now())
-    familiar.save()
+#[[[REV 2 07/10/22]]]
+
+def crear_familiar(request):
+    # familiar = Familiar(nombre=nombre, apellido=apellido, edad=random.randrange(1,99), fecha_nacimiento=datetime.now())
+    # familiar.save()
+    # familiar = Familiar(nombre=nombre, apellido=apellido, edad=random.randrange(1,99), fecha_nacimiento=datetime.now())
+    familiar1 = Familiar(nombre='Diego', apellido='Maradona', edad=random.randrange(1,99), fecha_nacimiento=datetime.now())
+    familiar2 = Familiar(nombre='Román', apellido='Riquelme', edad=random.randrange(1,99), fecha_nacimiento=datetime.now())
+    familiar3 = Familiar(nombre='Roberto', apellido='Carlos', edad=random.randrange(1,99), fecha_nacimiento=datetime.now())
+    familiar1.save()
+    familiar2.save()
+    familiar3.save()
     
     template = loader.get_template('crear_familiar.html')
-    template_renderizado = template.render({'familiar': familiar})
+    template_renderizado = template.render()
     
     return HttpResponse(template_renderizado) 
 

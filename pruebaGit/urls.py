@@ -35,7 +35,8 @@ urlpatterns = [
     # path('Hola2/', hola2),
     # path('fecha-actual/', fecha_actual),
     #path('crear-persona/', views.crear_persona), # REV 07/10/22
-    path('crear-familiar/<str:nombre>/<str:apellido>/', views.crear_familiar), 
+    # path('crear-familiar/<str:nombre>/<str:apellido>/', views.crear_familiar), 
+    path('crear-familiar/', views.crear_familiar), 
     path('ver-familiar/', views.ver_familiar), 
     path('admin/', admin.site.urls),
 ]
